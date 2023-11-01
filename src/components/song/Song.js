@@ -1,21 +1,14 @@
 import React from 'react';
 
-const Song = () => {
+const Song = ({currentSong}) => {
+
     return (
         <div className={"container"}>
             <div className="row">
-                <div className="col col-6 mx-auto py-5">
-                    <div className="card text-center">
-                        <div className="card-header">
-                            <h2>Song name</h2>
-                        </div>
-                        <div className="card-body">
-                            <img src="" alt=""/>
-                        </div>
-                        <div className="card-footer">
-                            <h5>Artist</h5>
-                        </div>
-                    </div>
+                <div className="col-6 mx-auto py-5 text-center">
+                    <img src={currentSong.cover} className={"img-fluid w-50 shadow rounded-circle"} alt={currentSong.name}/>
+                    <h4 className={"my-3 text-truncate"}>{currentSong.name}</h4>
+                    <h6 className={"m-0 text-truncate"}>{currentSong.artist}</h6>
                 </div>
             </div>
         </div>
