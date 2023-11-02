@@ -24,14 +24,19 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
     const readableTime = (time) => {
         return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     }
-
+    const dragSongHandler = (e) => {
+        audioRef.current.currentTime = e.target.value
+        setSongInfo((prevState) => ({...prevState, currentTime: e.target.value}))
+    }
     return (
         <div className={"container"}>
             <div className="row">
                 <div className="col-6 mx-auto">
                     <div className="time-control d-flex align-items-center justify-content-between">
                         <p className={"m-0 me-1"}>{readableTime(songInfo.currentTime)}</p>
-                        <input type="range" className={"form-range"}/>
+                        <input type="range" className={"form-range"} min={0} max={songInfo.duration}
+                               value={songInfo.currentTime ? songInfo.currentTime : ""}
+                               onChange={dragSongHandler}/>
                         <p className={"m-0 ms-1"}>{readableTime(songInfo.duration)}</p>
                     </div>
                     <div className="player-control py-5 d-flex align-items-center justify-content-between">
@@ -40,7 +45,8 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
                                          icon={isPlaying ? faPause : faPlay}/>
                         <FontAwesomeIcon className={"play"} size={"2x"} icon={faAngleRight}/>
                     </div>
-                    <audio onTimeUpdate={songUpdateHandler} onLoadedMetadata={readableTime} src={currentSong.audio} ref={audioRef}></audio>
+                    <audio onTimeUpdate={songUpdateHandler} onLoadedMetadata={readableTime} src={currentSong.audio}
+                           ref={audioRef}></audio>
                 </div>
             </div>
         </div>
