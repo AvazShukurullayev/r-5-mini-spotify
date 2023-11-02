@@ -24,11 +24,29 @@ const chillHop = () => {
             name: "Keep Going",
             cover: "https://chillhop.com/wp-content/uploads/2023/08/3f5eb74c8d8e36a38baa2f71be53ea5761ed3c6d-1024x1024.jpg",
             artist: "Sworn",
-            audio: "https://stream.chillhop.com/mp3/43784",
+            audio: "https://stream.chillhop.com/mp3/9272",
             color: ["#CD607D", "#c94043"],
             id: uuidv4(),
             active: false
         },
+        {
+            name: "Smack that",
+            cover: "https://picsum.photos/id/16/200/200",
+            artist: "Eddy 2d",
+            audio: "https://stream.chillhop.com/mp3/10075",
+            color: ["#CD607D", "#c94043"],
+            id: uuidv4(),
+            active: false
+        },
+        {
+            name: "Toyo Miu",
+            cover: "https://picsum.photos/id/15/200/200",
+            artist: "Chilula",
+            audio: "https://stream.chillhop.com/mp3/9148",
+            color: ["#CD607D", "#c94043"],
+            id: uuidv4(),
+            active: false
+        }
     ]
 }
 
