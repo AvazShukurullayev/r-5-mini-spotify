@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./app.scss"
-import {Player, Song} from "../components";
+import {Library, Player, Song} from "../components";
 import chillhop from "../components/chillhop";
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
         <div className={"app"}>
             <Song currentSong={currentSong}/>
             <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+            <Library songs={songs}/>
         </div>
     );
 };
