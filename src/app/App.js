@@ -9,9 +9,11 @@ const App = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     return (
         <div className={"app"}>
-            <Song currentSong={currentSong}/>
-            <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-            <Library songs={songs}/>
+            <Library songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong} setIsPlaying={setIsPlaying}/>
+            <div className={"m-0 ms-auto w-75"}>
+                <Song currentSong={currentSong}/>
+                <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+            </div>
         </div>
     );
 };

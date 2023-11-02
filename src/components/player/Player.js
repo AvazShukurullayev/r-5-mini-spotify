@@ -30,7 +30,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
     }
     return (
         <div className={"container"}>
-            <div className="row">
+            <div className="row text-dark">
                 <div className="col-9 mx-auto">
                     <div className="time-control d-flex align-items-center justify-content-between">
                         <p className={"m-0 me-2"}>{readableTime(songInfo.currentTime)}</p>
