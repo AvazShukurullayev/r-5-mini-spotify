@@ -15,6 +15,7 @@ const Player = ({
                     setSongs,
                     setCurrentSong
                 }) => {
+
     // useEffects
     useEffect(() => {
         const newSongs = songs.map((song) => {
@@ -40,6 +41,7 @@ const Player = ({
     const readableTime = (time) => {
         return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     }
+
     const dragSongHandler = (e) => {
         audioRef.current.currentTime = e.target.value
         setSongInfo({...setSongInfo, currentTime: e.target.value})
@@ -59,6 +61,7 @@ const Player = ({
         }
         playSong(isPlaying, audioRef)
     }
+
     return (
         <div className={"container"}>
             <div className="row text-dark">
