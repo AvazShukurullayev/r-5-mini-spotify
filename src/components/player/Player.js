@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleLeft, faAngleRight, faPause, faPlay} from "@fortawesome/free-solid-svg-icons";
+import {playSong} from "../util";
 
 const Player = ({
                     currentSong,
@@ -56,6 +57,7 @@ const Player = ({
                 setCurrentSong(songs[(currentSongIndex - 1) % songs.length])
             }
         }
+        playSong(isPlaying, audioRef)
     }
     return (
         <div className={"container"}>
@@ -65,7 +67,7 @@ const Player = ({
                         <p className={"m-0 me-2"}>{readableTime(songInfo.currentTime)}</p>
                         <input type="range" className={"form-range"} min="0" max={songInfo.duration || 0}
                                value={songInfo.currentTime} onChange={dragSongHandler}/>
-                        <p className={"m-0 ms-2"}>{readableTime(songInfo.duration)}</p>
+                        <p className={"m-0 ms-2"}>{songInfo.duration ? readableTime(songInfo.duration) : "0:00"}</p>
                     </div>
                     <div className="col-6 mx-auto">
                         <div className="player-control py-5 d-flex align-items-center justify-content-between">
