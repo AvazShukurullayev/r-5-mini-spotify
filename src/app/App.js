@@ -28,7 +28,7 @@ const App = () => {
                 <Song currentSong={currentSong}/>
                 <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}
                         audioRef={audioRef} timeUpdateHandler={timeUpdateHandler} songInfo={songInfo}
-                        setSongInfo={setSongInfo}/>
+                        setSongInfo={setSongInfo} songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong}/>
             </div>
         </div>
     );
