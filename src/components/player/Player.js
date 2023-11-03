@@ -26,7 +26,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying, audioRef, timeUpdateHandl
                 <div className="col-9 mx-auto">
                     <div className="time-control d-flex align-items-center justify-content-between">
                         <p className={"m-0 me-2"}>{readableTime(songInfo.currentTime)}</p>
-                        <input type="range" className={"form-range"} min="0" max={songInfo.duration}
+                        <input type="range" className={"form-range"} min="0" max={songInfo.duration || 0}
                                value={songInfo.currentTime} onChange={dragSongHandler}/>
                         <p className={"m-0 ms-2"}>{readableTime(songInfo.duration)}</p>
                     </div>
